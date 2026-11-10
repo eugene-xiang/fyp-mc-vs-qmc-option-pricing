@@ -1,0 +1,95 @@
+{
+  "experiment": {
+    "contract": {
+      "spot": 100.0,
+      "strike": 100.0,
+      "maturity": 1.0,
+      "rate": 0.05,
+      "volatility": 0.2,
+      "monitoring_dates": 128
+    },
+    "methods": [
+      "mc",
+      "rqmc",
+      "mc_av",
+      "rqmc_av",
+      "mc_is",
+      "rqmc_is"
+    ],
+    "budgets": [
+      1024,
+      4096,
+      16384
+    ],
+    "replications": 32,
+    "seed": 42049770,
+    "importance_sampling": {
+      "shift_candidates": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0
+      ],
+      "pilot_points": 4096
+    },
+    "benchmark_points": 262144,
+    "benchmark_replications": 16,
+    "benchmark_se_fraction": 0.1
+  },
+  "endpoint_epsilon": 1.1102230246251565e-16,
+  "sobol_bits": 52,
+  "seed_rule": "Start at seed; reserve the first seed for the IS pilot if used; then increment after each replicate",
+  "antithetic_rule": "Negate the complete normal vector; average the two discounted payoffs",
+  "endpoint_adjustments_rule": "Count clipped base uniform coordinates; reflected normals need no second transform",
+  "pilot": {
+    "seed": 42049770,
+    "base_points": 4096,
+    "payoff_evaluations": 28672,
+    "endpoint_adjustments": 0,
+    "elapsed_seconds": 0.05546091601718217,
+    "selected_shift": 1.0,
+    "informative": true,
+    "candidates": [
+      {
+        "shift": 0.0,
+        "second_moment": 96.13109566398133,
+        "positive_payoffs": 2279
+      },
+      {
+        "shift": 0.5,
+        "second_moment": 59.15552569219335,
+        "positive_payoffs": 2950
+      },
+      {
+        "shift": 1.0,
+        "second_moment": 54.608544087089086,
+        "positive_payoffs": 3472
+      },
+      {
+        "shift": 1.5,
+        "second_moment": 77.66487210587118,
+        "positive_payoffs": 3803
+      },
+      {
+        "shift": 2.0,
+        "second_moment": 149.11517796751878,
+        "positive_payoffs": 3983
+      },
+      {
+        "shift": 2.5,
+        "second_moment": 375.80427264598995,
+        "positive_payoffs": 4055
+      },
+      {
+        "shift": 3.0,
+        "second_moment": 1104.218231270129,
+        "positive_payoffs": 4085
+      }
+    ]
+  },
+  "importance_sampling_rule": "theta = selected_shift / sqrt(d) * ones(d); ordinary likelihood-ratio weights",
+  "pilot_reuse_rule": "One MC pilot shared by all IS evaluation budgets and replicates of both methods"
+}

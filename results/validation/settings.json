@@ -1,0 +1,33 @@
+{
+  "european": {
+    "contract": {
+      "spot": 100.0,
+      "strike": 100.0,
+      "maturity": 1.0,
+      "rate": 0.05,
+      "volatility": 0.2,
+      "monitoring_dates": 1
+    },
+    "budget": 16384,
+    "replications": 16,
+    "seed": 729,
+    "is_shift": 1.0
+  },
+  "deterministic": {
+    "contract": {
+      "spot": 100.0,
+      "strike": 100.0,
+      "maturity": 1.0,
+      "rate": 0.05,
+      "volatility": 0.0,
+      "monitoring_dates": 16
+    },
+    "strikes": [
+      80.0,
+      100.0,
+      120.0
+    ],
+    "budget": 256,
+    "seed": 77
+  }
+}
