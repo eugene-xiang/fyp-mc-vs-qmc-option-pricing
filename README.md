@@ -74,15 +74,27 @@ for plotting and analysis.
 
 ## Repository structure
 
-| Path | Contents |
-|---|---|
-| [`src/models.py`](src/models.py) | Contract parameters, exact Black–Scholes paths and discounted payoffs |
-| [`src/pricing.py`](src/pricing.py) | Sampling, estimators, variance reduction and pilot tuning |
-| [`src/experiments.py`](src/experiments.py) | Experiment settings, execution and summaries |
-| [`src/plotting.py`](src/plotting.py) | Figures and tables generated from saved results |
-| [`tests/`](tests/) | Mathematical and reproducibility checks |
-| [`results/`](results/) | Saved settings, replicate estimates, summaries and figures |
-| [`report/`](report/) | Report and supporting figures and tables |
+```text
+.
+├── report/
+│   ├── figures/           # Figures used in the report
+│   ├── tables/            # Tables used in the report
+│   └── QF4204_Report.pdf
+├── results/
+│   ├── sweep/             # Main experiment data and outputs
+│   └── validation/        # Analytical validation results
+├── src/
+│   ├── __init__.py
+│   ├── experiments.py     # Experiment settings and execution
+│   ├── models.py          # Contract parameters, stock paths and payoffs
+│   ├── plotting.py        # Figures and tables from saved results
+│   └── pricing.py         # Sampling and pricing estimators
+├── tests/
+│   └── test_pricing.py    # Mathematical and reproducibility checks
+├── .gitignore
+├── README.md
+└── requirements.txt       # Pinned Python dependencies
+```
 
 ## Configuration and saved results
 

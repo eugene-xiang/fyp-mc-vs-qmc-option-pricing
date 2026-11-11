@@ -1,62 +1,8 @@
-# Virtual environments
+# Python virtual environment and bytecode
 .venv/
-venv/
-env/
-ENV/
-
-# Python bytecode and caches
 __pycache__/
-*.py[codz]
-*$py.class
+*.py[cod]
 
-# Test, coverage, type-checking, and lint caches
-.pytest_cache/
-.coverage
-.coverage.*
-htmlcov/
-.mypy_cache/
-.ruff_cache/
-.hypothesis/
-.matplotlib/
-.tox/
-.nox/
-
-# Python packaging and build output
-build/
-dist/
-*.egg-info/
-.eggs/
-pip-wheel-metadata/
-
-# Jupyter notebooks
-.ipynb_checkpoints/
-
-# Local environment variables and secrets
-.env
-.env.*
-!.env.example
-
-# LaTeX intermediate files
-*.aux
-*.bbl
-*.bcf
-*.blg
-*.fdb_latexmk
-*.fls
-*.lof
-*.log
-*.lot
-*.out
-*.run.xml
-*.synctex.gz
-*.toc
-*.xdv
-
-# Editors and operating systems
+# Operating-system files
 .DS_Store
 Thumbs.db
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
